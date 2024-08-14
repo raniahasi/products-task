@@ -1,0 +1,17 @@
+﻿@model List<Dictionary<string, string>>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="@product["ImagePath"]" alt="@product["Name"]" />
+                <div class="card-body">
+                    <h5 class="card-title">@product["Name"]</h5>
+                    <p class="card-text">@product["Description"]</p>
+                    <p class="card-text">@Convert.ToDecimal(product["Price"]).ToString("C")</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
